@@ -80,8 +80,7 @@ gulp.task('styles', function () {
               'Safari >= 9.1'
         ]
     ))
-	// .pipe(cleanCSS())
-  .pipe(csscomb())
+	.pipe(cleanCSS())
   .pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
