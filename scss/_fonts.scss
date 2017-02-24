@@ -2,5 +2,6 @@
 
 @include font-face("SFUIDisplay-Regular", "../fonts/SFUIDisplay-Regular/SFUIDisplay-Regular", $file-formats: woff);
 @include font-face("SFUIDisplay-Light", "../fonts/SFUIDisplay-Light/SFUIDisplay-Light", $file-formats: woff);
+@include font-face("SFUIDisplay-Ultralight", "../fonts/SFUIDisplay-Ultralight/SFUIDisplay-Ultralight", $file-formats: woff);
 @include font-face("Panton-regular", "../fonts/Panton-regular/Panton-regular", $file-formats: woff ttf);
 @include font-face("Panton-semibold", "../fonts/Panton-semibold/Panton-semibold", $file-formats: woff ttf);

@@ -42,7 +42,11 @@ a {
     outline: none;
   }
 }
-h1,h2 {
+h1,h2,h3 {
+  margin: 0;
+  padding: 0;
+}
+p {
   margin: 0;
   padding: 0;
 }
@@ -203,7 +207,12 @@ h1,h2 {
   flex-wrap: wrap;
   margin-top: 75px;
   &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     flex-basis: 285px;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
   &_picture {
     text-align: center;
@@ -212,9 +221,18 @@ h1,h2 {
     }
   }
   &_title {
+    margin: 30px 0 20px 0;
+    font-family: "SFUIDisplay-Ultralight", sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
     text-align: center;
+    letter-spacing: 0.03em;
   }
   &_description {
+    font-family: "SFUIDisplay-Light", sans-serif;
+    font-size: 18px;
+    color: #9b9b9b;
     text-align: center;
+    line-height: 1.2;
   }
 }
