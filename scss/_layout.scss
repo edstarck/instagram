@@ -116,7 +116,6 @@ h1,h2 {
   }
 }
 
-
 .social {
   &_item {
     display: inline-block;
@@ -179,5 +178,43 @@ h1,h2 {
         transition: $transition;
       }
     }
+  }
+}
+
+.advantages {
+  padding: 75px 0;
+}
+.section_title {
+  font-family: "Panton-regular", sans-serif;
+  font-size: 50px;
+  color: #000000;
+  text-align: center;
+  line-height: 1;
+  span {
+    max-width: 575px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 75px;
+  &_item {
+    flex-basis: 285px;
+  }
+  &_picture {
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+  &_title {
+    text-align: center;
+  }
+  &_description {
+    text-align: center;
   }
 }
