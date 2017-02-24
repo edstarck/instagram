@@ -1,16 +1,7 @@
 landing page instagram:
---- setting workflow -----------------------
-  ✔ gulp @done (17-02-24 22:39)
-  ✔ git @done (17-02-24 23:09)
-  ☐ fonts
-  ☐ vars
-  ✔ libs @done (17-02-24 22:39)
 
 --- html + css -----------------------
-  ☐ первый экран
-    ☐ центровка контента
-    ☐ переливающийся беграунд
-  ☐ экран с тарифами
+  ☐ экран с тарифами @started(17-02-25 01:49)
   ☐ экран с формой
   ☐ адаптивность
 
@@ -26,3 +17,15 @@ landing page instagram:
   ☐ форма обратной связи
   ☐ подключение платежной системы
 
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ центровка контента @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ переливающийся беграунд @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ первый экран @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ vars @done (17-02-24 23:48) @project(landing page instagram)
+ ✔ fonts @done (17-02-24 23:41) @project(landing page instagram)
+ ✔ git @done (17-02-24 23:09) @project(landing page instagram)
+ ✔ libs @done (17-02-24 22:39) @project(landing page instagram)
+ ✔ gulp @done (17-02-24 22:39) @project(landing page instagram)
