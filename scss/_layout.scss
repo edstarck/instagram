@@ -4,6 +4,42 @@
   box-sizing: border-box;
 }
 
+::-webkit-input-placeholder {
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  color: #cacaca;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+*:-moz-placeholder {
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  color: #cacaca;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+*::-moz-placeholder{
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  color: #cacaca;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+*:-ms-input-placeholder {
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  color: #cacaca;
+  opacity: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -27,6 +63,11 @@ ul {
   list-style-type: none;
 }
 
+strong {
+  font-family: "SFUIDisplay-Bold", sans-serif;
+  color: #000;
+}
+
 nav {
   margin: 0;
   padding: 0;
@@ -42,7 +83,7 @@ a {
     outline: none;
   }
 }
-h1,h2,h3 {
+h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
 }
@@ -64,7 +105,6 @@ p {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: boredr-box;
 }
 
 .first-screen {
@@ -84,6 +124,19 @@ p {
   font-size: 50px;
   color: $color-white;
   line-height: 1;
+  &--center {
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
+.sub-title {
+  margin-top: 20px;
+  color: #ebebeb;
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.11;
 }
 
 .big-icon {
@@ -113,6 +166,20 @@ p {
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+  &_submit {
+    width: 226px;
+    height: 50px;
+    color: #fff;
+    font-family: "Panton-semibold", sans-serif;
+    font-size: 18px;
+    border-radius: 100px;
+    border: 0;
+    background-image: linear-gradient(78deg, #e90334, #9c027c 52%, #5202c1);
+    outline: none;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
   &:hover {
     color: $color-white;
     background-color: transparent;
@@ -200,7 +267,6 @@ p {
     margin: 0 auto;
   }
 }
-
 .grid {
   display: flex;
   justify-content: space-between;
@@ -234,5 +300,187 @@ p {
     color: #9b9b9b;
     text-align: center;
     line-height: 1.2;
+  }
+}
+
+.offers {
+  padding: 75px 0;
+  background-color: #f3f3f3;
+  &_grid {
+    max-width: 1064px;
+    margin: 0 auto;
+    margin-top: 110px;
+    display: flex;
+    justify-content: space-around;
+  }
+  &_title {
+    text-align: center;
+  }
+  &_item {
+    width: 285px;
+    border-radius: 50px;
+    background-color: $color-white;
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.2);
+  }
+  &_price {
+    margin: 0 0 35px 0;
+    padding: 30px 0;
+    border-bottom: 1px solid #f3f3f3;
+    text-align: center;
+  }
+  &_subtitle {
+    color: #9b9b9b;
+    font-family: "SFUIDisplay-Ultralight", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  &_title {
+    position: relative;
+    display: inline-block;
+    padding-right: 40px;
+    font-family: "Panton-bold", sans-serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    background: linear-gradient(64deg, #ffd520, #f50400 37%, #b900b4);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    color: transparent;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 11px;
+      right: -5px;
+      width: 28px;
+      height: 36px;
+      background-image: url("../img/icons/user_icon.svg");
+    }
+  }
+  &_text {
+    color: #9b9b9b;
+    font-family: "SFUIDisplay-Ultralight", sans-serif;
+    font-size: 18px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  &_content {
+    padding: 0 30px 30px 30px;
+  }
+  &_form {
+    text-align: center;
+  }
+  &_field {
+    width: 226px;
+    height: 50px;
+    margin: 35px 0 10px 0;
+    padding: 0 7px;
+    color: #cacaca;
+    font-family: "SFUIDisplay-Ultralight", sans-serif;
+    font-size: 18px;
+    border-radius: 100px;
+    border: solid 1px #ebebeb;
+    outline: none;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  &_pay {
+    margin-top: 50px;
+    font-family: "SFUIDisplay-Ultralight", sans-serif;
+    font-size: 14px;
+    color: $color-accent-secondary;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  &_servies {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_logo {
+    width: 100px;
+    height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &--yandex {
+      background-image: url("../img/icons/Yandex-Money.svg");
+    }
+    &--qiwi {
+      background-image: url("../img/icons/Qiwi.svg");
+    }
+    &--visa {
+      background-image: url("../img/icons/Visa.svg");
+    }
+    &--master {
+      background-image: url("../img/icons/Master-Card.svg");
+    }
+    &--mir {
+      background-image: url("../img/icons/mir.svg");
+    }
+    &--pay {
+      background-image: url("../img/icons/applePay.svg");
+    }
+  }
+}
+
+.field {
+  display: block;
+  width: 320px;
+  height: 50px;
+  margin: 35px auto 10px auto;
+  padding: 0 7px;
+  font-family: "SFUIDisplay-Ultralight", sans-serif;
+  font-size: 18px;
+  color: #cacaca;
+  border-radius: 100px;
+  border: solid 1px #ebebeb;
+  background-color: transparent;
+  outline: none;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+
+.footer {
+  border-top: solid 1px rgba(#fff, .2);
+  &_wrap {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &_copiright {
+    height: 30px;
+    padding-top: 2px;
+    padding-left: 40px;
+    color: $color-white;
+    font-family: "SFUIDisplay-Light", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: normal;
+    background-image: url("../img/icons/copyright.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    letter-spacing: 0.03em;
+  }
+  &_link {
+    display: block;
+    width: 180px;
+    height: 30px;
+    padding-top: 3px;
+    padding-right: 65px;
+    color: $color-white;
+    font-family: "SFUIDisplay-Light", sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: right;
+    letter-spacing: 0.03em;
+    background-image: url("../img/icons/studiologo.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
   }
 }

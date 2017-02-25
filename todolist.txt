@@ -1,7 +1,7 @@
 landing page instagram:
 
 --- html + css -----------------------
-  ☐ экран с тарифами @started(17-02-25 01:49)
+  ☐ блок с преимуществами @started(17-02-25 05:00)
   ☐ экран с формой
   ☐ адаптивность
 
@@ -21,6 +21,7 @@ landing page instagram:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ экран с тарифами @started(17-02-25 01:49) @done (17-02-25 02:54) @lasted(1:05) @project(landing page instagram)
  ✔ центровка контента @done (17-02-25 01:48) @project(landing page instagram)
  ✔ переливающийся беграунд @done (17-02-25 01:48) @project(landing page instagram)
  ✔ первый экран @done (17-02-25 01:48) @project(landing page instagram)
