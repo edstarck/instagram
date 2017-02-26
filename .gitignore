@@ -1,3 +1,5 @@
 node_modules/
 maket/
-.git
+.git/
+*.glue
+todolist.txt
