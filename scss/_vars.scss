@@ -11,3 +11,18 @@ $color-accent-secondary : #9b9b9b; // доплнительный цвет тек
 //*-------------------------
 
 $transition: all .5s ease-in-out;
+
+//*-------------------------
+// gradient
+//*-------------------------
+$colorA: #ffd520;
+$colorAA: #f50400;
+$colorAAA: #b900b4;
+$colorB: #b900b4;
+$colorBB: #ffd520;
+$colorBBB: #f50400;
+
+@mixin gradient($color1, $color2, $color3) {
+  background: $color2;
+  background: linear-gradient(48deg,  $color1 ,$color2 0%, $color3 90%);
+}
