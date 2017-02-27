@@ -1,0 +1,43 @@
+landing page instagram:
+
+--- ✄ -----------------------
+function getRandomRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+--- html + css -----------------------
+  ☐ анимация тарифов
+  ☐ собрать все иконки svg
+
+--- JS -----------------------
+
+  ☐ общую анимацию по скроллу
+  ☐ анимация меню
+  ☐ анимация ползунка
+
+--- Modx -----------------------
+
+  ☐ посадка на Modx
+  ☐ форма обратной связи
+  ☐ подключение платежной системы
+
+  --- bugFix-----------------------
+  ☐ Заменить цены в тарифах на картинки в IE
+
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ адаптивность @started(17-02-26 21:28) @done (17-02-27 00:58) @lasted(3:30)
+ ✔ Кроуссбраузерность @started(17-02-26 21:40) @done (17-02-27 00:58) @lasted(3:18)
+ ✔ экран с формой @started(17-02-25 06:13) @done (17-02-25 06:13) @lasted(a bit) @project(landing page instagram)
+ ✔ блок с преимуществами @started(17-02-25 05:00) @done (17-02-25 06:13) @lasted(1:13) @project(landing page instagram)
+ ✔ экран с тарифами @started(17-02-25 01:49) @done (17-02-25 02:54) @lasted(1:05) @project(landing page instagram)
+ ✔ центровка контента @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ переливающийся беграунд @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ первый экран @done (17-02-25 01:48) @project(landing page instagram)
+ ✔ vars @done (17-02-24 23:48) @project(landing page instagram)
+ ✔ fonts @done (17-02-24 23:41) @project(landing page instagram)
+ ✔ git @done (17-02-24 23:09) @project(landing page instagram)
+ ✔ libs @done (17-02-24 22:39) @project(landing page instagram)
+ ✔ gulp @done (17-02-24 22:39) @project(landing page instagram)
