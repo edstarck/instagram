@@ -260,16 +260,17 @@ p {
     width: 30px;
     height: 30px;
     display: block;
+    margin-left: 10px;
     background-repeat: no-repeat;
     background-position: center;
     &--vk {
-
+      background-image: url("../img/icons/vk.svg");
     }
     &--inst {
       background-image: url("../img/icons/insta.svg");
     }
     &--telega {
-
+      background-image: url("../img/icons/telega.svg");
     }
   }
 }
@@ -281,9 +282,19 @@ p {
 }
 .menu {
   position: relative;
-  border-top: solid 1px rgba(#fff, .2);
   display: none;
   z-index: 100;
+  background-image: transparent;
+  transition: $transition;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,.2);
+  }
   @media(min-width: 980px) {
     display: block;
   }
@@ -295,6 +306,7 @@ p {
     justify-content: space-between;
   }
   &_list {
+    position: relative;
     width: 320px;
     height: 100%;
     display: flex;
@@ -316,6 +328,22 @@ p {
     }
   }
 }
+.line_scroll {
+  position: absolute;
+  width: 113px;
+  height: 3px;
+  top: -23px;
+  left: 20px;
+  opacity: 0;
+  transform: scaleX(0);
+  background-color: #fff;
+  transition: $transition;
+}
+.scroller {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: $transition;
+}
 
 .fixed-panel {
   .menu {
@@ -323,6 +351,9 @@ p {
     height: 80px;
     position: fixed;
     background-image: linear-gradient(48deg, #ffd520, #f50400 37%, #b900b4);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: $transition;
   }
 }
 
@@ -429,6 +460,7 @@ p {
     position: relative;
     margin-bottom: 20px;
     border-radius: 50px;
+    transform: translateY(0);
     transition: $transition;
     @media(min-width: 980px) {
       margin-bottom: 0;
@@ -437,7 +469,7 @@ p {
       height: 290px;
       &:hover {
         transition: $transition;
-        transform: translateY(-60px);
+        transform: translateY(-60px) !important;
         z-index: 30;
         .offers_form {
           text-align: center;
@@ -466,6 +498,7 @@ p {
     transition: all .35s ease-in-out;
     z-index: 20;
     overflow: hidden;
+    will-change: height;
     @media(min-width: 1030px) {
       position: absolute;
     }
@@ -558,6 +591,7 @@ p {
     line-height: 1.2;
     @media (min-width: 600px) {
       font-size: 1.4rem;
+      margin: 110px auto 0 auto;
     }
   }
   &_servies {
@@ -568,7 +602,7 @@ p {
     align-items: center;
     flex-wrap: wrap;
     @media(min-width: 630px) {
-      max-width: 100%
+      max-width: 100%;
     }
   }
   &_logo {
