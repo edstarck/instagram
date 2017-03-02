@@ -92,6 +92,7 @@ gulp.task('scripts', function() {
     './app/libs/scrollMagic/ScrollMagic.min.js',
     './app/libs/greensock/TweenMax.min.js',
     './app/libs/scrollMagic/animation.gsap.min.js',
+    './app/libs/greensock/ScrollToPlugin.min.js',
     './app/libs/scrollMagic/debug.addIndicators.min.js'
 	])
 	.pipe(concat('libs.js'))
