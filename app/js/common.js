@@ -1,92 +1,80 @@
-function debounce(func, wait, immediate = true) {
-  var timeout;
-  return function() {
-      var context = this, args = arguments;
-      var later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-      };
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-  };
-};
+var controller = new ScrollMagic.Controller(),
+    firstScreen = document.querySelector('#first-screen'),
+    advantages = document.querySelector('#advantages'),
+    offers     = document.querySelector('#offers'),
+    callback   = document.querySelector('#callback'),
+    buttonRow  = document.querySelector('.row_button'),
+    title      = document.querySelector('.title');
 
 //First-screen
 (function() {
-  var button      = document.querySelector('.row_button'),
-      title       = document.querySelector('.title'),
-      titleOffset = title.offsetTop - 50,
-      firstScreen = document.querySelector('.first-screen');
 
-  function translateY(elem, sign) {
-    elem.style.webkitTransform = 'translateY(' + sign + 'px)';
-    elem.style.MozTransform = 'translateY(' + sign + 'px)';
-    elem.style.msTransform = 'translateY(' + sign + 'px)';
-    elem.style.OTransform = 'translateY(' + sign + 'px)';
-    elem.style.transform = 'translateY(' + sign + 'px)';
-  }
-
-  function translateBlocks() {
-    var limit = 60,
-        sign  = Math.round((window.scrollY - titleOffset) / 3.5);
-    if(window.scrollY >= titleOffset) {
-      if (sign >= limit) {
-        translateY(button, -limit);
-      } else {
-        translateY(button, -sign);
-      }
-    }
-  }
-
-  window.addEventListener('scroll', debounce(translateBlocks));
-})();
-
-// Line scroll
-(function() {
-  var lineScroll    = document.querySelector('.line_scroll'),
-      lineScrollTop = lineScroll.offsetTop;
-
-  function scrollScale() {
-    if(window.scrollY - lineScrollTop >= 500) {
-      lineScroll.classList.add('scroller');
-    } else {
-      lineScroll.classList.remove('scroller');
-    }
-  }
-
-  window.addEventListener('scroll', scrollScale, false);
 })();
 
 // Fixed panel
 (function() {
-  var controller = new ScrollMagic.Controller();
   var menu = document.querySelector('#menu');
-  var lineScroll = document.querySelector('.line_scroll');
 
   var scene = new ScrollMagic.Scene({
-    triggerElement: '.menu',
+    triggerElement: menu,
     triggerHook: 'onLeave'
   })
   .setPin(menu)
-  .on('start', function () {
-    window.addEventListener('scroll', function() {
-      var x = Math.round((window.scrollY - menu.offsetTop) / 10);
-      lineScroll.style.left = x + 'px';
-      console.log(window.scrollY - menu.offsetTop);
-    });
-  })
   .setClassToggle(menu,'menu--fixed')
   .addTo(controller)
 })();
 
+//Scroll to id
+(function() {
+  var linkArr = document.querySelectorAll('.menu_link--scroll[href^="#"]');
+
+  for(var i = 0; i < linkArr.length; i++) {
+    linkArr[i].onclick = function(e) {
+      e.preventDefault();
+      var id = this.getAttribute('data-url');
+      if (id === '#callback') {
+        TweenMax.to(window, 1.2, {scrollTo: {y: id}, ease:Power2.easeOut});
+      } else {
+        TweenMax.to(window, 1.2, {scrollTo: {y: id, offsetY: 80}, ease:Power2.easeOut})
+      }
+    }
+  }
+
+  var tween = new TimelineMax()
+      .to('.line_scroll', .4, {autoAlpha: 1, scaleX: 1});
+  new ScrollMagic.Scene({
+    triggerElement: advantages,
+    duration: 80
+  })
+  .setTween(tween)
+  .addTo(controller);
+
+  var tweenScroll = new TimelineMax()
+      .to('.line_scroll', 5, {x: 165, delay: 1});
+  new ScrollMagic.Scene({
+    triggerElement: advantages,
+    duration: advantages.offsetHeight - 50,
+    offset: 150
+  })
+  .setTween(tweenScroll)
+  .addTo(controller);
+
+  var tweenScrollEnd = new TimelineMax()
+      .to('.line_scroll', 1, {autoAlpha: 1, scaleX: 0, delay: 1});
+  new ScrollMagic.Scene({
+    triggerElement: offers,
+    triggerHook: 0.2,
+    duration: offers.offsetHeight - 150,
+    offset: 150
+  })
+  .setTween(tweenScrollEnd)
+  .addTo(controller);
+})();
+
 //Advantages block
 (function() {
-  // init controller
-  var controller = new ScrollMagic.Controller();
   var tween = new TimelineMax()
-        .from('#advantages .section_title', .35, {autoAlpha: 0, scale: 1.1});
+      .from('#advantages .section_title', .35, {autoAlpha: 0, scale: 1.1});
 
   // build scene title
   var scene = new ScrollMagic.Scene({
@@ -109,8 +97,6 @@ function debounce(func, wait, immediate = true) {
 
 //Offers block
 (function() {
-  // init controller
-  var controller = new ScrollMagic.Controller();
   var tween = new TimelineMax()
       .from('#offers .section_title', .35, {autoAlpha: 0, scale: 1.1})
 
@@ -138,29 +124,5 @@ function debounce(func, wait, immediate = true) {
 
 //Callback block
 (function() {
-  var controller = new ScrollMagic.Controller();
-  var lineScroll = document.querySelector('.line_scroll');
-  var callback = document.getElementById('callback');
 
-  var tween = new TimelineMax()
-    .to(window, .1, {scrollTo: callback, autoKill:false,
-        onStart: function() {
-           window.scrollBy(0, window.innerHeight);
-           TweenMax.to('.menu', .1, {height: 0});
-        },
-        onComplete: function () {
-          lineScroll.classList.remove('scroller');
-        },
-        onReverseComplete: function () {
-          lineScroll.classList.add('scroller');
-          TweenMax.to('.menu', .1, {height: '80px'});
-        }
-    });
-
-  var scene = new ScrollMagic.Scene({
-    triggerElement: callback,
-    triggerHook: 0.2
-  })
-  .setTween(tween)
-  .addTo(controller);
 })();
