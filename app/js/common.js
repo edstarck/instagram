@@ -4,8 +4,8 @@ var controller  = new ScrollMagic.Controller(),
     offers      = document.querySelector('#offers'),
     callback    = document.querySelector('#callback'),
     buttonRow   = document.querySelector('.row_button'),
-    title       = document.querySelector('.title');
     menu        = document.querySelector('.menu');
+    title       = document.querySelector('.title');
 
 //First-screen
 (function() {
@@ -183,5 +183,14 @@ var controller  = new ScrollMagic.Controller(),
 
 //Callback block
 (function() {
-
+  var tween = new TimelineMax()
+      .to('.gradient--menu', 10, {y: -80});
+  new ScrollMagic.Scene({
+    triggerElement: callback,
+    triggerHook: 0,
+    offset: -60,
+    duration: 79,
+  })
+  .setTween(tween)
+  .addTo(controller);
 })();

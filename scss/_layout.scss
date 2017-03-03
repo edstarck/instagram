@@ -40,6 +40,24 @@
   letter-spacing: 0.03em;
 }
 
+/* Place Holder CSS for Focus */
+:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -119,6 +137,7 @@ p {
   justify-content: space-between;
   padding: 0;
   .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +155,14 @@ p {
   height: 100%;
   top: 0;
   left: 0;
+  &--menu {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
 }
 .gradient-1 {
   @include gradient($colorA, $colorAA, $colorAAA);
@@ -295,9 +322,12 @@ p {
   z-index: 100;
   background-image: transparent;
   &--fixed {
-    background-image: linear-gradient(48deg, #ffd520, #f50400 37%, #b900b4);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    .gradient--menu {
+      height: 100%;
+      opacity: 1;
+    }
   }
   &:before {
     content: "";
@@ -317,11 +347,13 @@ p {
     position: relative;
   }
   &_row {
+    position: relative;
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 50;
   }
   &_list {
     position: relative;
@@ -692,7 +724,7 @@ p {
   display: block;
   width: 260px;
   height: 50px;
-  margin: 35px auto 10px auto;
+  margin: 35px auto 20px auto;
   padding: 0 7px;
   font-family: "SFUIDisplay-Ultralight", sans-serif;
   font-size: 1.8rem;
@@ -720,6 +752,7 @@ p {
       display: block;
   }
   .container {
+    position: relative;
     z-index: 20;
   }
 }
