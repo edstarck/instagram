@@ -1,25 +1,84 @@
-var controller = new ScrollMagic.Controller(),
+var controller  = new ScrollMagic.Controller(),
     firstScreen = document.querySelector('#first-screen'),
-    advantages = document.querySelector('#advantages'),
-    offers     = document.querySelector('#offers'),
-    callback   = document.querySelector('#callback'),
-    buttonRow  = document.querySelector('.row_button'),
-    title      = document.querySelector('.title');
+    advantages  = document.querySelector('#advantages'),
+    offers      = document.querySelector('#offers'),
+    callback    = document.querySelector('#callback'),
+    buttonRow   = document.querySelector('.row_button'),
+    title       = document.querySelector('.title');
+    menu        = document.querySelector('.menu');
 
 //First-screen
 (function() {
 
-})();
+  //=========================
+  //****** Screen scale *****
+  //=========================
+  var tween = new TimelineMax()
+      .to('#first-screen .gradient', 20, {y: -(firstScreen.offsetHeight / 4)});
 
-// Fixed panel
-(function() {
-  var menu = document.querySelector('#menu');
+  new ScrollMagic.Scene({
+    triggerElement: firstScreen,
+    triggerHook: 0,
+    offset: 80,
+    duration: '45%'
+  })
+  // .addIndicators({
+  //   name: 'firstScreen',
+  //   color: 'blue'
+  // })
+  .setTween(tween)
+  .addTo(controller);
 
+  //=========================
+  //******* Menu Scroll *****
+  //=========================
+  var tweenMenu = new TimelineMax()
+      .to(menu, 20, {y: -(firstScreen.offsetHeight / 4)});
+
+  new ScrollMagic.Scene({
+    triggerElement: firstScreen,
+    triggerHook: 0,
+    offset: 80,
+    duration: '45%'
+  })
+  .setTween(tweenMenu)
+  // .addIndicators({
+  //   name: 'scroll-menu',
+  //   color: '#000'
+  // })
+  .addTo(controller);
+
+  //=========================
+  //***** Button Scroll *****
+  //=========================
+  var tweenButton = new TimelineMax()
+      .to(buttonRow, 20, {y: -80});
+
+  new ScrollMagic.Scene({
+    triggerElement: firstScreen,
+    triggerHook: 0,
+    offset: 100,
+    duration: 200
+  })
+  // .addIndicators({
+  //   name: 'scroll-button',
+  //   color: '#000'
+  // })
+  .setTween(tweenButton)
+  .addTo(controller)
+
+  //=========================
+  //******* Menu Fixed ******
+  //=========================
   var scene = new ScrollMagic.Scene({
     triggerElement: menu,
-    triggerHook: 'onLeave'
+    triggerHook: 0.25
   })
   .setPin(menu)
+  // .addIndicators({
+  //   name: 'fixed-menu',
+  //   color: 'green'
+  // })
   .setClassToggle(menu,'menu--fixed')
   .addTo(controller)
 })();
