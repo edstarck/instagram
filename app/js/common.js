@@ -94,11 +94,10 @@ var controller  = new ScrollMagic.Controller(),
   .addTo(controller);
 
   var tweenScroll = new TimelineMax()
-      .to('.line_scroll', 5, {x: 165, delay: 1});
+      .to('.line_scroll', 2, {x: 165, delay: 1.2});
   new ScrollMagic.Scene({
     triggerElement: advantages,
-    duration: advantages.offsetHeight - 50,
-    offset: 150
+    duration: '120%'
   })
   .setTween(tweenScroll)
   .addTo(controller);
@@ -118,7 +117,7 @@ var controller  = new ScrollMagic.Controller(),
 //Advantages block
 (function() {
   var tween = new TimelineMax()
-      .from('#advantages .section_title', .35, {autoAlpha: 0, scale: 1.1});
+      .from('#advantages .section_title', .35, {autoAlpha: 0, scale: 1.1, delay: 0.7});
 
   // build scene title
   var scene = new ScrollMagic.Scene({
@@ -130,7 +129,7 @@ var controller  = new ScrollMagic.Controller(),
 
   // build scene grid_item
   var tween_item  = new TimelineMax()
-        .staggerFrom('.grid_item', .4, {autoAlpha: 0, scale: 1.1}, 0.2, 0.2);
+        .staggerFrom('.grid_item', .4, {autoAlpha: 0, scale: 1.1, delay: 0.8}, 0.2, 0.2);
   var scene_item = new ScrollMagic.Scene({
     triggerElement: ".grid",
     triggerHook: .85
