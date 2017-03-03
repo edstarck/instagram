@@ -80,7 +80,7 @@ gulp.task('styles', function () {
               'Safari >= 9.1'
         ]
     ))
-	// .pipe(cleanCSS())
+	.pipe(cleanCSS())
   .pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream());
@@ -91,7 +91,6 @@ gulp.task('scripts', function() {
     './app/libs/scrollMagic/ScrollMagic.min.js',
     './app/libs/greensock/TweenMax.min.js',
     './app/libs/scrollMagic/animation.gsap.min.js',
-    './app/libs/greensock/EasePack.js',
     './app/libs/greensock/ScrollToPlugin.min.js',
     './app/libs/scrollMagic/debug.addIndicators.min.js'
 	])
