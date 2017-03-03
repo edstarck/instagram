@@ -9,78 +9,63 @@ var controller  = new ScrollMagic.Controller(),
 
 //First-screen
 (function() {
+  if (window.innerWidth >= 770) {
+    //=========================
+    //****** Screen scale *****
+    //=========================
+    var tween = new TimelineMax()
+        .to('#first-screen .gradient', 20, {y: -(firstScreen.offsetHeight / 5)});
 
-  //=========================
-  //****** Screen scale *****
-  //=========================
-  var tween = new TimelineMax()
-      .to('#first-screen .gradient', 20, {y: -(firstScreen.offsetHeight / 4)});
+    new ScrollMagic.Scene({
+      triggerElement: firstScreen,
+      triggerHook: 0,
+      offset: 80,
+      duration: '45%'
+    })
+    .setTween(tween)
+    .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: firstScreen,
-    triggerHook: 0,
-    offset: 80,
-    duration: '45%'
-  })
-  // .addIndicators({
-  //   name: 'firstScreen',
-  //   color: 'blue'
-  // })
-  .setTween(tween)
-  .addTo(controller);
+    //=========================
+    //******* Menu Scroll *****
+    //=========================
+    var tweenMenu = new TimelineMax()
+        .to(menu, 20, {y: -(firstScreen.offsetHeight / 5)});
 
-  //=========================
-  //******* Menu Scroll *****
-  //=========================
-  var tweenMenu = new TimelineMax()
-      .to(menu, 20, {y: -(firstScreen.offsetHeight / 4)});
+    new ScrollMagic.Scene({
+      triggerElement: firstScreen,
+      triggerHook: 0,
+      offset: 80,
+      duration: '45%'
+    })
+    .setTween(tweenMenu)
+    .addTo(controller);
 
-  new ScrollMagic.Scene({
-    triggerElement: firstScreen,
-    triggerHook: 0,
-    offset: 80,
-    duration: '45%'
-  })
-  .setTween(tweenMenu)
-  // .addIndicators({
-  //   name: 'scroll-menu',
-  //   color: '#000'
-  // })
-  .addTo(controller);
+    //=========================
+    //***** Button Scroll *****
+    //=========================
+    var tweenButton = new TimelineMax()
+        .to(buttonRow, 20, {y: -80});
 
-  //=========================
-  //***** Button Scroll *****
-  //=========================
-  var tweenButton = new TimelineMax()
-      .to(buttonRow, 20, {y: -80});
+    new ScrollMagic.Scene({
+      triggerElement: firstScreen,
+      triggerHook: 0,
+      offset: 100,
+      duration: 200
+    })
+    .setTween(tweenButton)
+    .addTo(controller)
 
-  new ScrollMagic.Scene({
-    triggerElement: firstScreen,
-    triggerHook: 0,
-    offset: 100,
-    duration: 200
-  })
-  // .addIndicators({
-  //   name: 'scroll-button',
-  //   color: '#000'
-  // })
-  .setTween(tweenButton)
-  .addTo(controller)
-
-  //=========================
-  //******* Menu Fixed ******
-  //=========================
-  var scene = new ScrollMagic.Scene({
-    triggerElement: menu,
-    triggerHook: 0.25
-  })
-  .setPin(menu)
-  // .addIndicators({
-  //   name: 'fixed-menu',
-  //   color: 'green'
-  // })
-  .setClassToggle(menu,'menu--fixed')
-  .addTo(controller)
+    //=========================
+    //******* Menu Fixed ******
+    //=========================
+    var scene = new ScrollMagic.Scene({
+      triggerElement: menu,
+      triggerHook: 0.2
+    })
+    .setPin(menu)
+    .setClassToggle(menu,'menu--fixed')
+    .addTo(controller)
+  }
 })();
 
 //Scroll to id
