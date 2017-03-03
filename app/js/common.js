@@ -60,7 +60,7 @@ var controller  = new ScrollMagic.Controller(),
     //=========================
     var scene = new ScrollMagic.Scene({
       triggerElement: menu,
-      triggerHook: 0.2
+      triggerHook: 0.199
     })
     .setPin(menu)
     .setClassToggle(menu,'menu--fixed')
