@@ -366,7 +366,7 @@ p {
   }
   &_item {
     position: relative;
-    padding: 7px 20px;
+    padding: 0 20px;
     border: 2px solid transparent;
     border-radius: 50px;
     transition: $transition;
@@ -378,6 +378,8 @@ p {
   }
   &_link {
     position: relative;
+    display: block;
+    padding: 7px 0;
     font-family: "SFUIDisplay-Light", sans-serif;
     font-size: 1.8rem;
     color: $color-white;

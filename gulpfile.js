@@ -73,11 +73,11 @@ gulp.task('styles', function () {
               'Android 2.3',
               'Android >= 4',
               'Chrome >= 49',
-              'Firefox >= 49',
-              'Explorer >= 10',
-              'iOS >= 9.3',
-              'Opera >= 42',
-              'Safari >= 9.1'
+              'Firefox >= 20',
+              'Explorer >= 8',
+              'iOS >= 6.0',
+              'Opera >= 12.1',
+              'Safari >= 6.0'
         ]
     ))
 	.pipe(cleanCSS())
@@ -91,7 +91,8 @@ gulp.task('scripts', function() {
     './app/libs/scrollMagic/ScrollMagic.min.js',
     './app/libs/greensock/TweenMax.min.js',
     './app/libs/scrollMagic/animation.gsap.min.js',
-    './app/libs/greensock/ScrollToPlugin.min.js'
+    './app/libs/greensock/ScrollToPlugin.min.js',
+    './app/libs/flexibility/flexibility.js'
 	])
 	.pipe(concat('libs.js'))
 	.pipe(uglify())
